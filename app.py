@@ -35,7 +35,6 @@ def predict():
         if not all(feature in data for feature in feature_names):
             raise ValueError("Missing or incorrect features in input data.")
 
-        # Process input data and perform prediction using your model
         # Ensure that the order of features matches the order used during training
         input_data = pd.DataFrame({feature: [data[feature]] for feature in feature_names})
             
@@ -49,9 +48,6 @@ def predict():
         # Log detailed error information
         app.logger.error(f"Prediction error: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
-
- 
 
 
 if __name__ == "__main__":
